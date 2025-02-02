@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "bhargavmo14/react-app"
+        IMAGE_NAME = "bhargavmo14/react-k8s-app"
         IMAGE_TAG = "latest"
     }
 
