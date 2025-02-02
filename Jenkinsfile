@@ -5,8 +5,23 @@ pipeline {
         IMAGE_NAME = "bhargavmo14/react-k8s-app"
         IMAGE_TAG = "latest"
     }
+    tools {
+        nodejs 'NodeJS 14'  // Refer to the NodeJS installation configured in Jenkins
+    }
 
     stages {
+        stage('Verify npm') {
+            steps {
+                sh 'npm -v'  // This will output the npm version if it is correctly installed
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
         stage('Checkout Code') {
             steps {
                 git branch: 'main', url: 'https://github.com/Bhargav1470/React-K8S-App.git'
