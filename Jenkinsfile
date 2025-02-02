@@ -10,7 +10,9 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Bhargav1470/React-K8S-App.git'
+                git branch: 'main', 
+                url: 'https://github.com/Bhargav1470/React-K8S-App.git',
+                credentialsId: 'bhargav1470@BMO' // Replace with your actual credentials ID
             }
         }
 
