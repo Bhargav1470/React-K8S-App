@@ -5,9 +5,6 @@ pipeline {
         IMAGE_NAME = "bhargavmo14/react-k8s-app"
         IMAGE_TAG = "latest"
     }
-    tools {
-        nodejs 'NodeJS 23.7.0'  // Refer to the NodeJS installation configured in Jenkins
-    }
 
     stages {
         stage('Verify npm') {
