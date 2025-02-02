@@ -12,7 +12,7 @@ pipeline {
             steps {
                 git branch: 'main', 
                 url: 'https://github.com/Bhargav1470/React-K8S-App.git',
-                credentialsId: 'bhargav1470@BMO' // Replace with your actual credentials ID
+                credentialsId: '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' // Replace with your actual credentials ID
             }
         }
 
