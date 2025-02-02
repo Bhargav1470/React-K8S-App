@@ -6,19 +6,13 @@ pipeline {
         IMAGE_TAG = "latest"
     }
     tools {
-        nodejs 'NodeJS 14'  // Refer to the NodeJS installation configured in Jenkins
+        nodejs 'NodeJS 23.7.0'  // Refer to the NodeJS installation configured in Jenkins
     }
 
     stages {
         stage('Verify npm') {
             steps {
                 sh 'npm -v'  // This will output the npm version if it is correctly installed
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install'
             }
         }
 
