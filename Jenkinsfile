@@ -15,18 +15,6 @@ pipeline {
                 credentialsId: 'github-credentials' // Replace with your actual credentials ID
             }
         }
-        stage('Install Node.js and npm') {
-            steps {
-                sh '''
-                    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-                    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-                    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-                    nvm install --lts
-                    node -v
-                    npm -v
-                '''
-            }
-        }
 
         stage('Install Dependencies') {
             steps {
