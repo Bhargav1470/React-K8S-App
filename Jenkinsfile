@@ -7,11 +7,6 @@ pipeline {
     }
 
     stages {
-        stage('Verify npm') {
-            steps {
-                sh 'npm -v'  // This will output the npm version if it is correctly installed
-            }
-        }
 
         stage('Checkout Code') {
             steps {
