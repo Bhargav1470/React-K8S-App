@@ -15,6 +15,21 @@ pipeline {
                 credentialsId: 'github-credentials' // Replace with your actual credentials ID
             }
         }
+            stage('Install npm') {
+              steps {
+                 script {
+                       sh '''
+                       if ! command -v node &> /dev/null; then
+                       brew update
+                       brew install node
+                   else
+                       echo "Node.js is already installed"
+                   fi
+                 '''
+                }
+            }
+        }
+
 
         stage('Install Dependencies') {
             steps {
